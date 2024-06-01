@@ -1,0 +1,25 @@
+﻿@model List<About>
+
+<section class="w3l-servicesblock py-md-5 py-4">
+    <div class="container pb-2">
+        @foreach (var about in Model)
+        {
+            <div class="row align-items-center">
+                <div class="col-lg-6 left-wthree-img pr-lg-4">
+                    <img src="@about.Image" alt="" class="img-fluid">
+                </div>
+                <div class="col-lg-6 about-right-faq align-self mb-lg-0 mb-5 pl-xl-5">
+                    <h6>About Us</h6>
+                    <h3 class="title-big mb-3">@about.Title</h3>
+                    <p class="">
+                        @about.Description.Substring(0,200)...
+                    </p>
+                    <a class="btn button-style button-2 mt-lg-5 mt-4" href="/About/Index">
+                        Read More<i class="fa fa-angle-double-right" aria-hidden="true"></i>
+                    </a>
+                </div>
+            </div>
+        }
+
+    </div>
+</section>

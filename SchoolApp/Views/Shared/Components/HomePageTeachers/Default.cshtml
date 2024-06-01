@@ -1,0 +1,32 @@
+﻿@model List<Teacher>
+<section class="w3l-teams-32-main py-5">
+    <div class="teams-32 py-md-4">
+        <div class="container">
+            <div class="title-main text-center mx-auto mb-4">
+                <h3 class="title-big">Our Expert Teachers</h3>
+                <p class="sub-title mt-2">
+                    Cum doctus civibus efficiantur in imperdiet deterruisset. Cras efficitur,
+                    metus
+                    gravida suscipit cursus, dui diam pre lorem id
+                    lectus.
+                </p>
+            </div>
+            <div class="row main-contteam-32 mt-sm-5 pt-lg-2">
+                @foreach (var teacher in Model)
+                {
+                    <div class="col-lg-3 col-6 team-main-19">
+                        <div class="column-19">
+                            <a><img class="img-fluid" src="@teacher.Image" alt=" "></a>
+                        </div>
+                        <div class="right-team-9">
+                            <h6><a class="title-team-32">@teacher.TeacherName</a></h6>
+                            <p class="sm-text-32">@teacher.TeacherDescription</p>
+                        </div>
+                    </div>
+                }
+
+
+            </div>
+        </div>
+    </div>
+</section>

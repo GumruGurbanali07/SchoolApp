@@ -1,0 +1,47 @@
+﻿@model List<About>
+@{
+    ViewData["Title"] = "About Us";
+    ViewData["ActiveAbout"] = "active";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="inner-banner">
+    <section class="w3l-breadcrumb">
+        <div class="container">
+            <h4 class="inner-text-title font-weight-bold mb-sm-3 mb-2">About Us</h4>
+            <ul class="breadcrumbs-custom-path">
+                <li><a href="/Home/Index">Home</a></li>
+                <li class="active"><span class="fa fa-chevron-right mx-2" aria-hidden="true"></span>About Us</li>
+            </ul>
+        </div>
+    </section>
+</div>
+<!-- //inner banner -->
+<!-- about section -->
+<section class="w3l-text-6 py-5" id="about">
+    <div class="text-6-mian py-md-4 py-3">
+        @foreach (var about in Model)
+        {
+            <div class="container">
+                <div class="row top-cont-grid align-items-center">
+                    <div class="col-lg-6 left-img pr-lg-4">
+                        <img src="@about.Image" alt="" class="img-responsive img-fluid" />
+                    </div>
+                    <div class="col-lg-6 text-6-info mb-lg-0 mb-4 pl-lg-5">
+                        <h6>About us</h6>
+                        <h2>@about.Title</h2>
+                        <p>
+                            @about.Description
+                        </p>
+                       
+                    </div>
+                </div>
+            </div>
+        }
+
+    </div>
+</section>
+<!-- //about section -->
+<!-- teams 32 block -->
+@await Component.InvokeAsync("HomePageTeachers")
+<!-- //teams 32 block -->
